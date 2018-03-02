@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2018 LG Electronics, Inc.
+// Copyright (c) 2013-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,7 +48,6 @@ typedef enum
 	NYX_OS_INFO_WEBOS_BUILD_ID = NYX_OS_INFO_WEBOS_BUILD,
 	NYX_OS_INFO_WEBOS_RELEASE_CODENAME,
 	NYX_OS_INFO_WEBOS_IMAGENAME,
-	NYX_OS_INFO_WEBOS_API_VERSION,
 	NYX_OS_INFO_WEBOS_PRERELEASE,
 	NYX_OS_INFO_MANUFACTURING_VERSION,
 	// NYX_OS_INFO_MANUFACTURING_VERSION will be deprecated,
