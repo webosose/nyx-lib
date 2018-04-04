@@ -103,6 +103,30 @@ NYX_API_EXPORT nyx_error_t nyx_system_query_rtc_time(nyx_device_handle_t handle,
 NYX_API_EXPORT nyx_error_t nyx_system_suspend(nyx_device_handle_t handle,
         bool *success);
 
+/**
+ * @brief Suspend the device asynchronously.
+ *
+ * @param[in]  handle - the handle returned from nyx_device_open
+ * @param[out] success - true if device was able to suspend
+ *
+ * @return error code (NYX_ERROR_NONE if operation is successful)
+ *
+ */
+
+NYX_API_EXPORT nyx_error_t nyx_system_suspend_async(nyx_device_handle_t handle,
+        bool *success);
+
+/**
+ * @brief Resume the device after it was suspended asynchronously.
++ *
+ * @param[in] handle - the handle returned from nyx_device_open
+ * @param[out] success - true if device was able to resume
+ *
+ * @return error code (NYX_ERROR_NONE if operation is successful)
+ */
+
+NYX_API_EXPORT nyx_error_t nyx_system_resume(nyx_device_handle_t handle,
+        bool *success);
 
 /**
  * @brief Shut down the device.

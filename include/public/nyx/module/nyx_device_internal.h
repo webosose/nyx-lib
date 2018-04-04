@@ -92,6 +92,8 @@ typedef enum
 	NYX_SYSTEM_QUERY_NEXT_ALARM_MODULE_METHOD,
 	NYX_SYSTEM_QUERY_RTC_TIME_MODULE_METHOD,
 	NYX_SYSTEM_SUSPEND_MODULE_METHOD,
+	NYX_SYSTEM_SUSPEND_ASYNC_MODULE_METHOD,
+	NYX_SYSTEM_RESUME_MODULE_METHOD,
 	NYX_SYSTEM_SHUTDOWN_MODULE_METHOD,
 	NYX_SYSTEM_REBOOT_MODULE_METHOD,
 	NYX_SYSTEM_ERASE_PARTITION_MODULE_METHOD,
@@ -298,6 +300,8 @@ typedef nyx_error_t (*nyx_system_query_next_alarm_function_t)(nyx_device_t *,
 typedef nyx_error_t (*nyx_system_query_rtc_time_function_t)(nyx_device_t *,
         time_t *);
 typedef nyx_error_t (*nyx_system_suspend_function_t)(nyx_device_t *, bool *);
+typedef nyx_error_t (*nyx_system_suspend_async_function_t)(nyx_device_t *, bool *);
+typedef nyx_error_t (*nyx_system_resume_function_t)(nyx_device_t *, bool *);
 typedef nyx_error_t (*nyx_system_shutdown_function_t)(nyx_device_t *,
         nyx_system_shutdown_type_t, const char *);
 typedef nyx_error_t (*nyx_system_reboot_function_t)(nyx_device_t *,

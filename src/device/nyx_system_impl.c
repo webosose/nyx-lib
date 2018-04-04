@@ -53,6 +53,16 @@ nyx_error_t nyx_system_suspend(nyx_device_handle_t handle, bool *success)
 	nyx_execute_return_function(system_suspend, SYSTEM, SUSPEND, handle, success);
 }
 
+nyx_error_t nyx_system_suspend_async(nyx_device_handle_t handle, bool *success)
+{
+	nyx_execute_return_function(system_suspend_async, SYSTEM, SUSPEND_ASYNC, handle, success);
+}
+
+nyx_error_t nyx_system_resume(nyx_device_handle_t handle, bool *success)
+{
+	nyx_execute_return_function(system_resume, SYSTEM, RESUME, handle, success);
+}
+
 nyx_error_t nyx_system_shutdown(nyx_device_handle_t handle,
                                 nyx_system_shutdown_type_t type, const char *reason)
 {
