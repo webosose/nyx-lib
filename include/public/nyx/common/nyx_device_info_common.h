@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ typedef enum
 	NYX_DEVICE_INFO_MSN,            /**< Manufacturer's Serial Number */
 	NYX_DEVICE_INFO_UPTIME,         /**< uptime */
 	NYX_DEVICE_INFO_WIRED_ADDR,     /**< Wired MAC Address */
+	NYX_DEVICE_INFO_P2P_ADDR,       /**< P2P MAC address */
 }
 nyx_device_info_type_t;
 
