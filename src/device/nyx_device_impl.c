@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2019 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -288,6 +288,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		          "module (%s%s%s%s) does not exist in %s nor in %s",
 		          NYX_MODULE_PREFIX, type_str, id, NYX_MODULE_SUFFIX, NYX_MODULE_DIR,
 		          NYX_MODULE_MOCK_DIR);
+		g_strfreev(tokens);
 		return NYX_ERROR_DEVICE_NOT_EXIST;
 	}
 
@@ -298,6 +299,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		nyx_error(MSGID_NYX_MODULE_OPEN_SYM_ERR, 0,
 		          "module does not implement \"nyx_module_open\" method");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -308,6 +310,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		nyx_error(MSGID_NYX_MODULE_CLOSE_SYM_ERR, 0,
 		          "module does not implement \"nyx_module_close\" method");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -319,6 +322,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		nyx_error(MSGID_NYX_MODULE_DECLARE_MAJOR_ERR, 0,
 		          "module was not declared with NYX_DECLARE_MODULE");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -331,6 +335,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		nyx_error(MSGID_NYX_MODULE_DECLARE_MINOR_ERR, 0,
 		          "module was not declared with NYX_DECLARE_MODULE");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -343,6 +348,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		nyx_error(MSGID_NYX_MODULE_DLSYM_ERR, 0,
 		          "module was not declared with NYX_DECLARE_MODULE");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -352,6 +358,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 	if (NULL == get_device_type_ptr)
 	{
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_UNSUPPORTED_DEVICE_TYPE;
 	}
 
@@ -361,6 +368,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 		          "module API version (%i) is different from the library API version (%i)",
 		          get_version_major_ptr(), NYX_API_VERSION_MAJOR);
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return NYX_ERROR_INCOMPATIBLE_LIBRARY;
 	}
 
@@ -386,6 +394,7 @@ nyx_error_t nyx_device_open(nyx_device_type_t type, nyx_device_id_t id,
 	{
 		nyx_error(MSGID_NYX_DEVICE_OPEN_ERR , 0 , "open device method failed");
 		dlclose(module_ptr);
+		g_strfreev(tokens);
 		return error;
 	}
 
