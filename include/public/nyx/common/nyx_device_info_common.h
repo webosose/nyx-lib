@@ -71,6 +71,7 @@ typedef enum
 	NYX_DEVICE_INFO_UPTIME,         /**< uptime */
 	NYX_DEVICE_INFO_WIRED_ADDR,     /**< Wired MAC Address */
 	NYX_DEVICE_INFO_P2P_ADDR,       /**< P2P MAC address */
+	NYX_DEVICE_INFO_DEVICE_ID,      /**< ID unique to a device */
 }
 nyx_device_info_type_t;
 
