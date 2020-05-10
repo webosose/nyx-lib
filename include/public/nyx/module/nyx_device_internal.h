@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -127,6 +127,8 @@ typedef enum
 	NYX_LED_CONTROLLER_SET_MODE_MODULE_METHOD,
 	/* gps module function */
 	NYX_GPS_INIT_MODULE_METHOD,
+	NYX_GPS_ENABLE_MOCK_MODULE_METHOD,
+	NYX_GPS_SET_MOCK_LATENCY_MODULE_METHOD,
 	NYX_GPS_START_MODULE_METHOD,
 	NYX_GPS_STOP_MODULE_METHOD,
 	NYX_GPS_CLEANUP_MODULE_METHOD,
@@ -404,6 +406,10 @@ typedef nyx_error_t (*nyx_gps_init_function_t)(nyx_device_t *,
         nyx_gps_callbacks_t *, nyx_gps_xtra_callbacks_t *,
         nyx_agps_callbacks_t *, nyx_gps_ni_callbacks_t *,
         nyx_agps_ril_callbacks_t *, nyx_gps_geofence_callbacks_t *);
+typedef nyx_error_t (*nyx_gps_enable_mock_function_t)(nyx_device_t *,
+        int32_t);
+typedef nyx_error_t (*nyx_gps_set_mock_latency_function_t)(nyx_device_t *,
+        int32_t);
 typedef nyx_error_t (*nyx_gps_start_function_t)(nyx_device_t *);
 typedef nyx_error_t (*nyx_gps_stop_function_t)(nyx_device_t *);
 typedef nyx_error_t (*nyx_gps_cleanup_function_t)(nyx_device_t *);

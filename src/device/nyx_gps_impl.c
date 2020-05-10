@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2018 LG Electronics, Inc.
+// Copyright (c) 2013-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,6 +27,20 @@ nyx_error_t nyx_gps_init(nyx_device_handle_t handle,
 {
 	nyx_execute_return_function(gps_init, GPS, INIT, handle,
 	                            gps_cbs, xtra_cbs, agps_cbs, gps_ni_cbs, agps_ril_cbs, geofence_cbs);
+}
+
+nyx_error_t nyx_gps_enable_mock(nyx_device_handle_t handle,
+                                   int32_t mock)
+{
+	nyx_execute_return_function(gps_enable_mock, GPS, ENABLE_MOCK, handle,
+	                            mock);
+}
+
+nyx_error_t nyx_gps_set_mock_latency(nyx_device_handle_t handle,
+                                   int32_t latency)
+{
+	nyx_execute_return_function(gps_set_mock_latency, GPS, SET_MOCK_LATENCY, handle,
+	                            latency);
 }
 
 nyx_error_t nyx_gps_start(nyx_device_handle_t handle)

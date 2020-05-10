@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -44,6 +44,12 @@ NYX_API_EXPORT nyx_error_t nyx_gps_init(nyx_device_handle_t handle,
 
 
 // Standard GPS Interface
+NYX_API_EXPORT nyx_error_t nyx_gps_enable_mock(nyx_device_handle_t handle,
+        int32_t mock);
+
+NYX_API_EXPORT nyx_error_t nyx_gps_set_mock_latency(nyx_device_handle_t handle,
+        int32_t latency);
+
 NYX_API_EXPORT nyx_error_t nyx_gps_start(nyx_device_handle_t handle);
 
 NYX_API_EXPORT nyx_error_t nyx_gps_stop(nyx_device_handle_t handle);
