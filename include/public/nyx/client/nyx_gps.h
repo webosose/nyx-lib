@@ -50,6 +50,9 @@ NYX_API_EXPORT nyx_error_t nyx_gps_enable_mock(nyx_device_handle_t handle,
 NYX_API_EXPORT nyx_error_t nyx_gps_set_mock_latency(nyx_device_handle_t handle,
         int32_t latency);
 
+NYX_API_EXPORT nyx_error_t nyx_gps_providers_query(nyx_device_handle_t handle,
+        nyx_gps_providers_query_t type, const char **val);
+
 NYX_API_EXPORT nyx_error_t nyx_gps_start(nyx_device_handle_t handle);
 
 NYX_API_EXPORT nyx_error_t nyx_gps_stop(nyx_device_handle_t handle);

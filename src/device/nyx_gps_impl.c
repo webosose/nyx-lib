@@ -43,6 +43,12 @@ nyx_error_t nyx_gps_set_mock_latency(nyx_device_handle_t handle,
 	                            latency);
 }
 
+nyx_error_t nyx_gps_providers_query(nyx_device_handle_t handle,
+                              nyx_gps_providers_query_t type, const char  **val)
+{
+	nyx_execute_return_function(gps_providers_query, GPS, QUERY_PROVIDERS, handle, type, val);
+}
+
 nyx_error_t nyx_gps_start(nyx_device_handle_t handle)
 {
 	nyx_device_t *d = (nyx_device_t *)handle;

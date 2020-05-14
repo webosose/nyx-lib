@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2018 LG Electronics, Inc.
+// Copyright (c) 2012-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -252,6 +252,12 @@ typedef uint16_t nyx_agps_status_value_t;
 typedef char nyx_gps_xtra_client_url_type[NYX_GPS_XTRA_CLIENT_MAX_URL_LEN];
 
 
+/* GPS providers for nyx-cmd*/
+typedef enum
+{
+        NYX_GPS_PROVIDER_NAME,
+        NYX_GPS_PROVIDER_STATUS,
+} nyx_gps_providers_query_t;
 
 /** Represents a location. */
 typedef struct
