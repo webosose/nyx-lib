@@ -68,8 +68,10 @@ typedef uint16_t nyx_gps_location_flags_t;
 #define NYX_GPS_LOCATION_HAS_SPEED      0x0004
 /** nyx_gps_location_t has valid bearing. */
 #define NYX_GPS_LOCATION_HAS_BEARING    0x0008
-/** nyx_gps_location_t has valid accuracy. */
+/** nyx_gps_location_t has valid horizontal accuracy. */
 #define NYX_GPS_LOCATION_HAS_ACCURACY   0x0010
+/** nyx_gps_location_t has valid vertical accuracy. */
+#define NYX_GPS_LOCATION_HAS_VERTICAL_ACCURACY   0x0020
 
 /** Flags for the nyx_gps_set_capabilities callback. */
 
@@ -279,6 +281,8 @@ typedef struct
 	float                       bearing;
 	/** Represents expected accuracy in meters. */
 	float                       accuracy;
+	/** Represents expected vertical accuracy in meters. */
+	float                       vertical_accuracy;
 	/** Timestamp for the location fix. */
 	int64_t                     timestamp;
 } nyx_gps_location_t;
