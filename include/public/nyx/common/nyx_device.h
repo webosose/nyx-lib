@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2022 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ typedef enum
 	NYX_DEVICE_GPS,
 	NYX_DEVICE_POWERKEY,
 	NYX_DEVICE_SECURITY2,
+	NYX_DEVICE_CEC,
 }
 nyx_device_type_t;
 

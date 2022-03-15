@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2022 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@
 #include <nyx/client/nyx_display.h>
 #include <nyx/client/nyx_device_info.h>
 #include <nyx/client/nyx_os_info.h>
+#include <nyx/client/nyx_cec.h>
 
 #include <nyx/client/nyx_sensor_acceleration.h>
 #include <nyx/client/nyx_sensor_als.h>

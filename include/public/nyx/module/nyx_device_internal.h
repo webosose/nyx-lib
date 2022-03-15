@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2020 LG Electronics, Inc.
+// Copyright (c) 2010-2022 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -172,7 +172,14 @@ typedef enum
 	NYX_SECURITY2_CREATE_HMAC_KEY_MODULE_METHOD,
 	NYX_SECURITY2_HMAC_MODULE_METHOD,
 	NYX_SECURITY2_CRYPT_3DES_SIMPLE_MODULE_METHOD,
-	NYX_SECURITY2_CRYPT_AES_SIMPLE_MODULE_METHOD
+	NYX_SECURITY2_CRYPT_AES_SIMPLE_MODULE_METHOD,
+	/* Cec module function*/
+	NYX_CEC_SET_CALLBACK_MODULE_METHOD,
+	NYX_CEC_SEND_COMMAND_MODULE_METHOD,
+	NYX_CEC_GET_PHYSICAL_ADDRESS_MODULE_METHOD,
+	NYX_CEC_SET_CONFIG_MODULE_METHOD,
+	NYX_CEC_GET_CONFIG_MODULE_METHOD,
+	NYX_CEC_GET_VERSION_MODULE_METHOD
 }
 module_method_t;
 
@@ -335,6 +342,7 @@ typedef nyx_error_t (*nyx_mass_storage_mode_register_change_callback_function_t)
 
 typedef nyx_error_t (*nyx_os_info_query_function_t)(nyx_device_t *,
         nyx_os_info_query_t type, const char **val);
+
 typedef nyx_error_t (*nyx_security_create_aes_key_function_t)(
     nyx_device_handle_t handle, int keylen, int *key_index);
 typedef nyx_error_t (*nyx_security_crypt_aes_function_t)(
@@ -463,6 +471,19 @@ typedef nyx_error_t (*nyx_gps_init_xtra_client_function_t)(nyx_device_t *,
 typedef nyx_error_t (*nyx_gps_stop_xtra_client_function_t)(nyx_device_t *);
 typedef nyx_error_t (*nyx_gps_download_xtra_data_function_t)(nyx_device_t *);
 typedef nyx_error_t (*nyx_gps_download_ntp_time_function_t)(nyx_device_t *);
+
+typedef nyx_error_t (*nyx_cec_set_callback_function_t)(
+	                nyx_device_t *, nyx_cec_callbacks_t *);
+typedef nyx_error_t (*nyx_cec_send_command_function_t)(
+	                nyx_device_t *, nyx_cec_command_t *);
+typedef nyx_error_t (*nyx_cec_get_physical_address_function_t)(
+	                nyx_device_t *, char **);
+typedef nyx_error_t (*nyx_cec_set_config_function_t)(
+	                nyx_device_t *, char *, char *);
+typedef nyx_error_t (*nyx_cec_get_config_function_t)(
+	                nyx_device_t *, char *, char **);
+typedef nyx_error_t (*nyx_cec_get_version_function_t)(
+	                nyx_device_t *, char **);
 
 #ifdef __cplusplus
 }
