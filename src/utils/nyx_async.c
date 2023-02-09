@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -92,6 +92,11 @@ nyx_error_t nyx_utils_async_callback(nyx_device_t *device_in_ptr,
 	struct callback_data *d = (struct callback_data *)calloc(sizeof(
 	                              struct callback_data), 1);
 
+	if(d == NULL)
+	{
+		nyx_error(MSGID_NYX_PTHREAD_CREATE_ERR, 0, "Could not allocate the memory");
+		return NYX_ERROR_OUT_OF_MEMORY;
+	}
 	d->device_ptr = device_in_ptr;
 	d->callback = callback;
 	d->status = status;

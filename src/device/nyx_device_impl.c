@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2019 LG Electronics, Inc.
+// Copyright (c) 2010-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -110,6 +110,11 @@ nyx_error_t nyx_device_get_iterator(nyx_device_type_t type,
 
 	struct nyx_device_iterator *i = (struct nyx_device_iterator *)calloc(sizeof(
 	                                    struct nyx_device_iterator), 1);
+
+	if(i == NULL)
+	{
+		return NYX_ERROR_OUT_OF_MEMORY;
+	}
 
 	int32_t count = _static_scan_directory(NYX_MODULE_DIR, type_str, filter, i);
 
