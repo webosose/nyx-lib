@@ -1,4 +1,4 @@
-// Copyright (c) 2022 LG Electronics, Inc.
+// Copyright (c) 2022-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ typedef struct nyx_cec_data {
 typedef struct nyx_cec_command {
     char name[NYX_CEC_COMMAND_NAME_LEN];
     int size;
-    nyx_cec_data_t params[NYX_CEC_PARAM_NAME_LEN];
+    nyx_cec_data_t params[NYX_CEC_COMMAND_PARAMS_LEN];
 } nyx_cec_command_t;
 
 typedef struct nyx_cec_response {
